@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import {Link} from 'react-router-dom';
+import { nextQuestion } from '../actions/question';
 
 class FooterBar extends Component {
+  handleNextQuestion = () => {
+    this.props.dispatch(nextQuestion());
+  }
+
   render(){
     return(
-      <button onClick={()=>console.log('Pressed Next')}>Next</button>
+      <button onClick={this.handleNextQuestion}>Next</button>
     )
   }
 }
 
-export default FooterBar;
+export default connect()(FooterBar);
