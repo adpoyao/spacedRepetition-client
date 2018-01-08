@@ -1,10 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {Redirect} from 'react-router-dom';
+import {Link, Redirect} from 'react-router-dom';
 
 import LandingHighlights from './landing-highlights';
-
-
 
 export function LandingPage(props) {
     //DUMMY DATA
@@ -36,9 +34,8 @@ export function LandingPage(props) {
         <div className="home">
             <h2>Expand your learning</h2> 
             <h2>potential with Kurikaeshi</h2>
-
-            <button onClick={() => console.log('Pressed Log in')}>Begin Learning!</button>
-    
+            
+            <Link to="/signup"><button onClick={() => console.log('Pressed Begin Learning')}>Begin Learning!</button></Link>
             
             {highlights}
 

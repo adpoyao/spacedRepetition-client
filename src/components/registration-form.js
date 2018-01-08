@@ -37,7 +37,7 @@ export class RegistrationForm extends React.Component {
                     component={Input}
                     type="password"
                     name="password"
-                    validate={[required, length({min: 10, max: 72}), isTrimmed]}
+                    validate={[required, length({min: 6, max: 72}), isTrimmed]}
                 />
                 <label htmlFor="passwordConfirm">Confirm password</label>
                 <Field
@@ -49,7 +49,7 @@ export class RegistrationForm extends React.Component {
                 <button
                     type="submit"
                     disabled={this.props.pristine || this.props.submitting}>
-                    Register
+                    Sign Up
                 </button>
             </form>
         );

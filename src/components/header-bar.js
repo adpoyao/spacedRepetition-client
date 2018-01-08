@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {clearAuth} from '../actions/auth';
 import {clearAuthToken} from '../local-storage';
+import {Link} from 'react-router-dom';
 
 export class HeaderBar extends React.Component {
     logOut() {
@@ -19,19 +20,17 @@ export class HeaderBar extends React.Component {
         } else {
             navButton = (
                 <div>
-                    <button onClick={() => console.log('Pressed Log in')}>Log in</button>
-                    <button onClick={() => console.log('Pressed Register')}>Register</button>
+                    <Link to="/login"><button onClick={() => console.log('login pressed')}>Log In</button></Link>
+                    <Link to="/signup"><button onClick={() => console.log('signup pressed')}>Sign Up</button></Link>
                 </div>
             )
         }
 
-        // SAMPLE LINK
-        // <LoginForm />
-        //     <Link to="/register">Register</Link>
-
         return (
             <div className="header-bar">
-                <h1>々Kurikaeshi</h1>
+                <Link to="/">
+                    <h1>々Kurikaeshi</h1>
+                </Link>
                 {navButton}
             </div>
         );
