@@ -27,9 +27,25 @@ class Question extends Component {
       </div>)
     }
 
+    let romaji, hiragana, katakana;
+    if(this.props.showRomaji){
+      romaji = <div>{this.props.romaji}</div>;
+    }
+
+    if(this.props.showHiragana){
+      hiragana = <div>{this.props.hiragana}</div>;
+    }
+
+    if(this.props.showKatakana){
+      katakana = <div>{this.props.katakana}</div>;
+    }
+
     return(
       <div>
         <Vocabulary vocab={this.props.vocab}/>
+        {romaji}
+        {hiragana}
+        {katakana}
         {example}
       </div>
     )
@@ -39,7 +55,13 @@ class Question extends Component {
 const mapStateToProps = state => ({
   vocab: state.questions.vocab,
   example: state.questions.example,
-  showExample: state.questions.showExample
+  showExample: state.questions.showExample,
+  romaji: state.questions.romaji,
+  hiragana: state.questions.hiragana,
+  katakana: state.questions.katakana,
+  showRomaji: state.setting.showRomaji,
+  showHiragana: state.setting.showHiragana,
+  showKatakana: state.setting.showKatakana
 })
 
 export default connect(mapStateToProps)(Question);

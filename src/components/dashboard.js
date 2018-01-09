@@ -7,14 +7,16 @@ import Question from './question';
 import Answer from './answer';
 import FooterBar from './footer-bar';
 
+import dashboard from './dashboard.css';
+
 export class Dashboard extends React.Component {
-    // componentDidMount() {
-    //     this.props.dispatch(fetchProtectedData());
-    // }
+    componentDidMount() {
+        this.props.dispatch(fetchProtectedData());
+    }
 
     render() {
         return (
-            <div>
+            <div className="dashboard">
                 <Question />
                 <Answer />
                 <FooterBar />

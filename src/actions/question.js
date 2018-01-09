@@ -8,3 +8,4 @@ export const toggleExample = boolean => ({
 export const nextQuestion = () => ({
   type: NEXT_QUESTION
 });
+

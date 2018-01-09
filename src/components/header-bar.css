@@ -1,0 +1,41 @@
+.header-bar {
+  display: flex;
+  padding: 5px 15px;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+}
+
+.site-name {
+  display: flex;
+  align-items: center;
+  color: rgb(205, 44, 46);
+  text-decoration: none;
+  margin: 0
+}
+
+.logo {
+  display: inline-block;
+  background: rgb(205, 44, 46);
+  color: white;
+  margin-right: 5px;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 0.8em;
+  line-height: 35px;
+  align-self: center;
+  text-align: center;
+}
+
+.nav-button {
+  display: flex;
+  align-items: center;
+}
+
+.login {
+  padding-right: 20px
+}
+
+.signup {
+
+}

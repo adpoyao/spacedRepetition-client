@@ -4,25 +4,31 @@ import {Link, Redirect} from 'react-router-dom';
 
 import LandingHighlights from './landing-highlights';
 
+import './landing-page.css';
+
 export function LandingPage(props) {
     //DUMMY DATA
     let highlightsArray = [
         {
-            icon: 'icon1',
-            highlight: 'Blah Blah Blah Blah'
+            icon: <div className="highlight-circle">あ</div>,
+            highlight: 'Insert highlight #1 details, i.e. promote Spaced-Repetition learning method.'
         },
         {
-            icon: 'icon2',
-            highlight: 'Tralala Tralala'
+            icon: <div className="highlight-circle">い</div>,
+            highlight: 'Insert highlight #2 details'
         },
         {
-            icon: 'icon3',
-            highlight: 'Yippy Yappy Yay'
+            icon: <div className="highlight-circle">う</div>,
+            highlight: 'Insert highlight #3 details'
         },
     ]
     
     let highlights = highlightsArray.map((item, index) => {
-        return <LandingHighlights key={index} icon={item.icon} highlight={item.highlight}/>
+        return (
+            <div className="highlight-column" > 
+                <LandingHighlights key={index} icon={item.icon} highlight={item.highlight}/>
+            </div>
+        )
     })
 
     // If we are logged in redirect straight to the user's dashboard
@@ -32,10 +38,10 @@ export function LandingPage(props) {
 
     return (
         <div className="home">
-            <h2>Expand your learning</h2> 
-            <h2>potential with Kurikaeshi</h2>
-            
-            <Link to="/signup"><button onClick={() => console.log('Pressed Begin Learning')}>Begin Learning!</button></Link>
+            <h2>Expand your learning<br></br>potential with Kurikaeshi</h2>
+            <div className="begin-learning">
+                <Link to="/signup" style={{ textDecoration: 'none' }}><a >Begin Learning!</a></Link>
+            </div>
             
             {highlights}
 

@@ -1,0 +1,34 @@
+.overlay {
+	width: 100%;
+	height: 100%;
+	color: #fff;
+	background: rgb(120, 165, 174);
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 0;
+	z-index: 1000;
+}
+
+.content {
+	color: #fff;
+	background: rgb(71, 118, 128);
+	position: relative;
+	height: auto;
+	/* width: 600px; */
+	border-radius: 3px;
+	top: 15%;
+	margin: auto auto;
+	border: 1px solid rgba(0,0,0,0.1);
+}
+
+.content h3 {
+	margin: 0;
+	padding: 0.4em;
+	text-align: center;
+	font-size: 2em;
+	/* font-weight: 300; */
+	opacity: 0.8;
+	background: rgba(0,0,0,0.1);
+	border-radius: 3px 3px 0 0;
+}

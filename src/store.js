@@ -8,10 +8,12 @@ import protectedDataReducer from './reducers/protected-data';
 import {setAuthToken, refreshAuthToken} from './actions/auth';
 
 import {reducer as questionReducer} from './reducers/question';
+import {reducer as settingReducer} from './reducers/setting';
 
 const store = createStore(
     combineReducers({
         questions: questionReducer,
+        setting: settingReducer,
         form: formReducer,
         auth: authReducer,
         protectedData: protectedDataReducer

@@ -1,15 +1,22 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import { nextQuestion } from '../actions/question';
+import { toggleExample, nextQuestion, saveProgress } from '../actions';
+
+import './footer-bar.css';
 
 class FooterBar extends Component {
   handleNextQuestion = () => {
     this.props.dispatch(nextQuestion());
+    this.props.dispatch(toggleExample(false));
+    //TODO: Implement Save Progress
+    this.props.dispatch(saveProgress());
   }
 
   render(){
     return(
-      <button onClick={this.handleNextQuestion}>Next</button>
+      <div className="footer-bar">
+        <button onClick={this.handleNextQuestion}>Next</button>
+      </div>
     )
   }
 }
