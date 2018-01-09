@@ -6,6 +6,8 @@ import Example from './example';
 
 import { toggleExample } from '../actions/question';
 
+import './question.css';
+
 class Question extends Component {
 
   handleToggleExample = () => {
@@ -41,12 +43,15 @@ class Question extends Component {
     }
 
     return(
-      <div>
-        <Vocabulary vocab={this.props.vocab}/>
-        {romaji}
-        {hiragana}
-        {katakana}
-        {example}
+      <div className='container'>
+        <Vocabulary 
+          vocab={this.props.vocab} 
+          romaji={romaji}
+          hiragana={hiragana}
+          katakana={katakana}
+          example = {example}
+          />
+        {/* {example} */}
       </div>
     )
   }

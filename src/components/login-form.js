@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import {Redirect} from 'react-router-dom';
 import {Field, reduxForm, focus} from 'redux-form';
 import Input from './input';
 import {login} from '../actions/auth';
@@ -18,6 +20,11 @@ export class LoginForm extends React.Component {
                 </div>
             );
         }
+
+        if (this.props.loggedIn) {
+            return <Redirect to="/dashboard" />;
+        }
+
         return (
             <form
                 className="login-form"
@@ -49,7 +56,12 @@ export class LoginForm extends React.Component {
     }
 }
 
-export default reduxForm({
+const mapStateToProps = (state, props) => ({
+    loggedIn: state.auth.currentUser !== null
+})
+
+export default LoginForm = connect(
+    mapStateToProps)(reduxForm({
     form: 'login',
     onSubmitFail: (errors, dispatch) => dispatch(focus('login', 'username'))
-})(LoginForm);
+    })(LoginForm));
