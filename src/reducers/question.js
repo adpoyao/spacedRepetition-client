@@ -6,6 +6,7 @@ const initialState = {
   katakana: 'ミライ',
   romaji: 'mirai',
   example: 'あなたの未来に乾杯！',
+  correctAnswer: 'future',
   resource: 'https://jisho.org/search/未来',
   showExample: false
 };

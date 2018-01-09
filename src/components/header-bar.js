@@ -22,7 +22,7 @@ export class HeaderBar extends React.Component {
     render() {
         let navButton;
         //TODO: Change Back after testing
-        if (!this.props.loggedIn) {
+        if (this.props.loggedIn) {
             navButton = (
                 <div>
                     <button onClick={this.toggleSetting}>Setting</button>
