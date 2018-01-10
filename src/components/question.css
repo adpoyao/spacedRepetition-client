@@ -8,3 +8,15 @@
   border-right: 1px black solid;
   border-bottom: 1px black solid;
 }
+
+.resource {
+  margin-top: 50px;
+  position: absolute;
+  background: white;
+  width: 400px;
+  border: 1px black solid;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  padding: 10px
+}

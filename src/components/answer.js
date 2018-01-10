@@ -2,15 +2,17 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import MultipleChoice from './multipleChoice';
-import { retrieve } from '../linkedList/linkedList';
 import { randomChooser } from '../wordBank/wordBank';
+import { evaluateAnswer } from '../actions';
 
 import './answer.css';
 
 class Answer extends Component {
 
   handleOnClick = (item) => {
-    console.log(`"${item}" button pressed`)
+    let evaluate;
+    item === this.props.correctAnswer ? evaluate = true : evaluate = false;
+    this.props.dispatch(evaluateAnswer(true, evaluate));
   }
 
   shuffle = array => {
@@ -34,7 +36,7 @@ class Answer extends Component {
 
   render(){
     let answerArray = [
-      this.props.vocab.correct, 
+      this.props.correctAnswer, 
       randomChooser(),
       randomChooser(),
       randomChooser()
@@ -54,7 +56,7 @@ class Answer extends Component {
 }
 
 const mapStateToProps = state => ({
-  vocab: retrieve(state.questions.questions, 0)
+  correctAnswer: state.question.question.correct
 })
 
 export default connect(mapStateToProps)(Answer);

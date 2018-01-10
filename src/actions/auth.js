@@ -1,6 +1,8 @@
 import jwtDecode from 'jwt-decode';
 import {SubmissionError} from 'redux-form';
 
+import { attachQuestions } from '../actions';
+
 import {API_BASE_URL} from '../config';
 import {normalizeResponseErrors} from './utils';
 import {saveAuthToken, clearAuthToken} from '../local-storage';
@@ -59,9 +61,11 @@ export const login = (username, password) => dispatch => {
             // Reject any requests which don't return a 200 status, creating
             // errors which follow a consistent format
             .then(res => normalizeResponseErrors(res))
-            .then(res => res.json())
-            // .then(res => console.log(res))
-            .then(({authToken}) => storeAuthInfo(authToken, dispatch))
+            .then(res => {return res.json()})
+            .then(({authToken, question}) => {
+                dispatch(attachQuestions(question));
+                storeAuthInfo(authToken, dispatch)
+            })
             .catch(err => {
                 const {code} = err;
                 const message =

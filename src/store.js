@@ -12,7 +12,7 @@ import {reducer as settingReducer} from './reducers/setting';
 
 const store = createStore(
     combineReducers({
-        questions: questionReducer,
+        question: questionReducer,
         setting: settingReducer,
         form: formReducer,
         auth: authReducer,

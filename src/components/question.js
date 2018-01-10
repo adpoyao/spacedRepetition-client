@@ -5,8 +5,6 @@ import Vocabulary from './vocabulary';
 import Example from './example';
 import { toggleExample } from '../actions/question';
 
-import { retrieve } from '../linkedList/linkedList';
-
 import './question.css';
 
 class Question extends Component {
@@ -16,7 +14,6 @@ class Question extends Component {
   }
 
   render(){
-    let vocab = retrieve(this.props.questions, 0);
     let example;
     if(!this.props.showExample){
       example = 
@@ -26,53 +23,62 @@ class Question extends Component {
       example = (
       <div>
         <p>Example Sentence:</p>
-        <Example example={vocab.example} />
+        <Example example={this.props.example} />
         <button onClick={this.handleToggleExample}>Hide example </button>
       </div>)
     }
 
-    let romaji, hiragana, katakana;
+    let romaji, hiragana, katakana, resource;
     if(this.props.showRomaji){
-      romaji = <div>{vocab.romaji}</div>;
+      romaji = <div>{this.props.romaji}</div>;
     }
 
     if(this.props.showHiragana){
-      hiragana = <div>{vocab.hiragana}</div>;
+      hiragana = <div>{this.props.hiragana}</div>;
     }
 
     if(this.props.showKatakana){
-      katakana = <div>{vocab.katakana}</div>;
+      katakana = <div>{this.props.katakana}</div>;
     }
-
-
+    
+    let link = `https://jisho.org/search/${this.props.correctAnswer}`
+    if (this.props.answeredCorrectly === null){
+      resource = <div></div>}
+    else if(!this.props.answeredCorrectly){
+      resource = (
+        <div className="resource">
+          <a href={link} target="_blank">View Answers from Jisho.org >></a>
+        </div>
+      )
+    }
+    
     return(
       <div className='container'>
         <Vocabulary 
-          vocab={vocab.vocab} 
+          vocab={this.props.vocab} 
           romaji={romaji}
           hiragana={hiragana}
           katakana={katakana}
           example = {example}
           />
-        {/* {example} */}
+        {resource}
       </div>
     )
   }
 }
 
 const mapStateToProps = state => ({
-  // Linked List:
-  questions: state.questions.questions,
-
-  // vocab: state.questions.vocab,
-  // example: state.questions.example,
-  showExample: state.questions.showExample,
-  // romaji: state.questions.romaji,
-  // hiragana: state.questions.hiragana,
-  // katakana: state.questions.katakana,
+  vocab: state.question.question.vocab,
+  example: state.question.question.example,
+  romaji: state.question.question.romaji,
+  hiragana: state.question.question.hiragana,
+  katakana: state.question.question.katakana,
+  showExample: state.question.showExample,
   showRomaji: state.setting.showRomaji,
   showHiragana: state.setting.showHiragana,
-  showKatakana: state.setting.showKatakana
+  showKatakana: state.setting.showKatakana,
+  answeredCorrectly: state.question.answeredCorrectly,
+  correctAnswer: state.question.question.correct
 })
 
 export default connect(mapStateToProps)(Question);

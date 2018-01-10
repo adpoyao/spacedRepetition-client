@@ -5,13 +5,14 @@ import {clearAuthToken} from '../local-storage';
 import {Link, Redirect} from 'react-router-dom';
 
 import Setting from './setting';
-import { toggleSetting } from '../actions';
+import { toggleSetting, evaluateAnswer } from '../actions';
 
 import './header-bar.css';
 
 export class HeaderBar extends React.Component {
     logOut() {
         this.props.dispatch(clearAuth());
+        this.props.dispatch(evaluateAnswer(false, null));
         clearAuthToken();
     }
 
