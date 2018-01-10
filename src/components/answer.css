@@ -1,0 +1,10 @@
+.answer-container {
+  /* dimension correlate with questions component */
+  width: 50%;
+  height: 412px;
+  margin-top: 10%;
+  display: flex;
+  justify-content: flex-end;
+  flex-flow: column wrap;
+  padding-left: 3%;
+}

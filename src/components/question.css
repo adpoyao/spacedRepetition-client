@@ -1,0 +1,10 @@
+.container {
+  /* dimension correlate with Answer component */
+  width: 50%;
+  height: 400px;
+  margin-top: 10%;
+  background: rgb(120, 165, 174);
+  border-top: 1px black solid;
+  border-right: 1px black solid;
+  border-bottom: 1px black solid;
+}

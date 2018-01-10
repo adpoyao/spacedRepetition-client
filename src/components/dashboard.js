@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {Redirect} from 'react-router-dom';
 import requiresLogin from './requires-login';
 import {fetchProtectedData} from '../actions/protected-data';
 
@@ -11,10 +12,18 @@ import dashboard from './dashboard.css';
 
 export class Dashboard extends React.Component {
     componentDidMount() {
+        // if (!this.props.loggedIn) {
+        //     return 
+        // } 
         this.props.dispatch(fetchProtectedData());
     }
-
+     
     render() {
+        // TODO: prevent sneaking into Dashboard
+        // if(!this.props.loggedIn){
+        //     return <Redirect to="/login" />
+        // }
+
         return (
             <div className="dashboard">
                 <Question />
@@ -41,7 +50,8 @@ const mapStateToProps = state => {
     return {
         username: state.auth.currentUser.username,
         name: `${currentUser.firstName} ${currentUser.lastName}`,
-        protectedData: state.protectedData.data
+        protectedData: state.protectedData.data,
+        loggedIn: state.auth.currentUser !== null
     };
 };
 

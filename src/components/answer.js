@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 
 import MultipleChoice from './multipleChoice';
 
+import './answer.css';
+
 class Answer extends Component {
   constructor(){
     super();
@@ -20,7 +22,7 @@ class Answer extends Component {
     });
     
     return(
-      <div>
+      <div className="answer-container">
         {choices}
       </div>
     )

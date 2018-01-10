@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
+import './example.css';
 
 const Example = props => {
   return(
-    <div>{props.example}</div>
+    <div className="example-container">
+      {props.example}
+    </div>
   )
 }
 

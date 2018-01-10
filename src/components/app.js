@@ -9,6 +9,8 @@ import LoginForm from './login-form';
 import RegistrationPage from './registration-page';
 import {refreshAuthToken} from '../actions/auth';
 
+import './app.css';
+
 export class App extends React.Component {
     componentWillReceiveProps(nextProps) {
         if (nextProps.loggedIn && !this.props.loggedIn) {

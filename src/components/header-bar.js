@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {clearAuth} from '../actions/auth';
 import {clearAuthToken} from '../local-storage';
-import {Link} from 'react-router-dom';
+import {Link, Redirect} from 'react-router-dom';
 
 import Setting from './setting';
 import { toggleSetting } from '../actions';
@@ -26,14 +26,14 @@ export class HeaderBar extends React.Component {
             navButton = (
                 <div>
                     <button onClick={this.toggleSetting}>Setting</button>
-                    <button onClick={() => this.logOut()}>Log out</button>
+                    <Link to="/"><button onClick={() => this.logOut()}>Log out</button></Link>
                 </div>
             );
         } else {
             navButton = (
                 <div className="nav-button">
-                    <Link to="/login" style={{ textDecoration: 'none' }}><a className="login">Log In</a></Link>
-                    <Link to="/signup" style={{ textDecoration: 'none' }}><a className="signup">Sign Up</a></Link>
+                    <Link to="/login" style={{ textDecoration: 'none' }}><button className="login">Log In</button></Link>
+                    <Link to="/signup" style={{ textDecoration: 'none' }}><button className="signup">Sign Up</button></Link>
                 </div>
             )
         }

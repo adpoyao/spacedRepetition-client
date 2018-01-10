@@ -25,8 +25,8 @@ export function LandingPage(props) {
     
     let highlights = highlightsArray.map((item, index) => {
         return (
-            <div className="highlight-column" > 
-                <LandingHighlights key={index} icon={item.icon} highlight={item.highlight}/>
+            <div className="highlight-column" key={index}> 
+                <LandingHighlights icon={item.icon} highlight={item.highlight}/>
             </div>
         )
     })
