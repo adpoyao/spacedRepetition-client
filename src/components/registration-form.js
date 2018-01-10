@@ -5,7 +5,7 @@ import {login} from '../actions/auth';
 import Input from './input';
 import {required, nonEmpty, matches, length, isTrimmed} from '../validators';
 
-import { fetchQuestions } from '../actions';
+// import { fetchQuestions } from '../actions';
 
 export class RegistrationForm extends React.Component {
     onSubmit(values) {
@@ -14,7 +14,7 @@ export class RegistrationForm extends React.Component {
         return this.props
             .dispatch(registerUser(user))
             .then(() => this.props.dispatch(login(username, password)))
-            .then(() => this.props.dispatch(fetchQuestions()));
+            // .then(() => this.props.dispatch(fetchQuestions()));
     }
 
     render() {

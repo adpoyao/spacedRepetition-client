@@ -3,8 +3,9 @@ import { connect } from 'react-redux';
 
 import Vocabulary from './vocabulary';
 import Example from './example';
-
 import { toggleExample } from '../actions/question';
+
+import { retrieve } from '../linkedList/linkedList';
 
 import './question.css';
 
@@ -15,6 +16,7 @@ class Question extends Component {
   }
 
   render(){
+    let vocab = retrieve(this.props.questions, 0);
     let example;
     if(!this.props.showExample){
       example = 
@@ -24,28 +26,29 @@ class Question extends Component {
       example = (
       <div>
         <p>Example Sentence:</p>
-        <Example example={this.props.example} />
+        <Example example={vocab.example} />
         <button onClick={this.handleToggleExample}>Hide example </button>
       </div>)
     }
 
     let romaji, hiragana, katakana;
     if(this.props.showRomaji){
-      romaji = <div>{this.props.romaji}</div>;
+      romaji = <div>{vocab.romaji}</div>;
     }
 
     if(this.props.showHiragana){
-      hiragana = <div>{this.props.hiragana}</div>;
+      hiragana = <div>{vocab.hiragana}</div>;
     }
 
     if(this.props.showKatakana){
-      katakana = <div>{this.props.katakana}</div>;
+      katakana = <div>{vocab.katakana}</div>;
     }
+
 
     return(
       <div className='container'>
         <Vocabulary 
-          vocab={this.props.vocab} 
+          vocab={vocab.vocab} 
           romaji={romaji}
           hiragana={hiragana}
           katakana={katakana}
@@ -58,12 +61,15 @@ class Question extends Component {
 }
 
 const mapStateToProps = state => ({
-  vocab: state.questions.vocab,
-  example: state.questions.example,
+  // Linked List:
+  questions: state.questions.questions,
+
+  // vocab: state.questions.vocab,
+  // example: state.questions.example,
   showExample: state.questions.showExample,
-  romaji: state.questions.romaji,
-  hiragana: state.questions.hiragana,
-  katakana: state.questions.katakana,
+  // romaji: state.questions.romaji,
+  // hiragana: state.questions.hiragana,
+  // katakana: state.questions.katakana,
   showRomaji: state.setting.showRomaji,
   showHiragana: state.setting.showHiragana,
   showKatakana: state.setting.showKatakana

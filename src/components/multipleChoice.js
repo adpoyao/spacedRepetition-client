@@ -4,7 +4,7 @@ import './multipleChoice.css';
 const MultipleChoice = props => {
 
   return(
-    <div className="multi-choice-container">
+    <div className="multi-choice-container" onClick={props.onClick}>
       {props.choice}
     </div>
   )
