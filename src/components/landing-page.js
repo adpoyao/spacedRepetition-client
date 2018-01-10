@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Link, Redirect} from 'react-router-dom';
+import backgroundImage from '../assets/tokyo-streets-night-photography.jpg';
 
 import LandingHighlights from './landing-highlights';
 
@@ -37,10 +38,10 @@ export function LandingPage(props) {
     }  
 
     return (
-        <div className="home">
-            <h2>Expand your learning<br></br>potential with Kurikaeshi</h2>
+        <div className="home" style={{backgroundImage: `url(${backgroundImage})`}}>
+            <h2 className="landing-intro">Expand your learning<br></br>potential with Kurikaeshi</h2>
             <div className="begin-learning">
-                <Link to="/signup" style={{ textDecoration: 'none' }}><a >Begin Learning!</a></Link>
+                <Link to="/signup" style={{ textDecoration: 'none' }}><button className="begin-button">Begin Learning!</button></Link>
             </div>
             
             {highlights}

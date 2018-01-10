@@ -3,9 +3,9 @@ import {connect} from 'react-redux';
 import {Link, Redirect} from 'react-router-dom';
 import backgroundImage from '../assets/tokyo-streets-night-photography.jpg';
 
-import RegistrationForm from './registration-form';
+import LoginForm from './login-form';
 
-export function RegistrationPage(props) {
+export function LoginPage(props) {
     // If we are logged in (which happens automatically when registration
     // is successful) redirect to the user's dashboard
     if (props.loggedIn) {
@@ -15,8 +15,8 @@ export function RegistrationPage(props) {
         <div 
             className="home"
             style={{backgroundImage: `url(${backgroundImage})`}}>
-            <h2>Sign Up</h2>
-            <RegistrationForm />
+            <h2 className="login-signup-title">Log In</h2>
+            <LoginForm />
             {/* <Link to="/">Login</Link> */}
         </div>
     );
@@ -26,4 +26,4 @@ const mapStateToProps = state => ({
     loggedIn: state.auth.currentUser !== null
 });
 
-export default connect(mapStateToProps)(RegistrationPage);
+export default connect(mapStateToProps)(LoginPage);

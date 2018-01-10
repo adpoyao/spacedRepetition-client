@@ -32,10 +32,47 @@
   align-items: center;
 }
 
-.login {
+.login,
+.signup {
+  position:relative;
+  vertical-align: middle;
+  color: black;
+  display: inline-block;
+  height: 30px;
+  text-align: center;
+  transition: 0.5s;
+  padding: 0 20px;
+  cursor: pointer;
+  transition:0.5s;
+  border: 1px solid black;
+  font-size: 0.6em;
+  width: 80px;
+  outline: none;
+}
 
+.login {
+  margin-right: 15px;
+  margin-left: 5px;
+}
+
+.login:hover {
+  border: 1px solid rgb(205, 44, 46);
+  color: rgb(205, 44, 46)
 }
 
 .signup {
+  
+}
 
+.signup:hover {
+  border: 1px solid rgb(205, 44, 46);
+  color: rgb(205, 44, 46)
+}
+
+@media all and (min-width: 580px) {
+  .login,
+  .signup {
+    font-size: 0.7em;
+    width: 100px;
+  }
 }

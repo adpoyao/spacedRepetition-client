@@ -2,25 +2,79 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  text-align: center
+  text-align: center;
+  height: 450px;
 }
 
-h2 {
-  flex: 1 100%
+.landing-intro {
+  flex: 1 100%;
+  color: white;
+  font-size: 3em;
+  margin-top: 80px;
+  line-height: 80px
 }
 
 .begin-learning {
   flex: 1 100%;
+  margin-top: -15px;
+}
+
+.begin-button {
+  position:relative;
+  vertical-align: middle;
+  color: white;
+  display: inline-block;
+  height: 50px;
+  text-align: center;
+  transition: 0.5s;
+  padding: 0 20px;
+  cursor: pointer;
+  transition:0.5s;
+  background-color: rgb(120, 165, 174);
+  border: 1px solid rgb(120, 165, 174);
+  border-radius: 2px;   
+  font-size: 1em;
+  width: 200px;
+}
+
+.begin-button:hover {
+  border: 1px solid rgb(66, 127, 141);
+  background-color: rgb(66, 127, 141)
 }
 
 .highlight-circle {
   background-color: rgb(205, 44, 46);
   color: white;
-  margin: 10px;
-  width: 200px
+  width: 200px;
+  margin-top: 40%;
 }
 
 .highlight-column {
-  margin: 10px;
+  margin: 10px 40px;
   width: 200px
+}
+
+@media all and (min-width: 580px) {
+  .begin-learning {
+    margin-top: 35px;
+  }
+
+  .highlight-circle {
+    margin-top: 60%
+  }
+}
+
+@media all and (min-width: 768px) {
+  .landing-intro {
+    margin-top: 140px;
+    font-size: 4em;
+  }
+
+  .begin-learning {
+    margin-top: 70px;
+  }
+
+  .highlight-circle {
+   margin-top: 25%;
+  }
 }
