@@ -15,7 +15,7 @@ import dashboard from './dashboard.css';
 export class Dashboard extends React.Component {
     componentDidMount() {
         // if (!this.props.loggedIn) {
-        //     return 
+        //     return <Redirect to="/" />
         // } 
         this.props.dispatch(fetchProtectedData());
     }
@@ -23,7 +23,7 @@ export class Dashboard extends React.Component {
     render() {
         // TODO: prevent sneaking into Dashboard
         // if(!this.props.loggedIn){
-        //     return <Redirect to="/login" />
+        //     return <Redirect to="/" />
         // }
 
         return (
@@ -51,10 +51,11 @@ const mapStateToProps = state => {
     const {currentUser} = state.auth;
     return {
         username: state.auth.currentUser.username,
-        name: `${currentUser.firstName} ${currentUser.lastName}`,
-        protectedData: state.protectedData.data,
+        // name: `${currentUser.firstName} ${currentUser.lastName}`,
+        // protectedData: state.protectedData.data,
         loggedIn: state.auth.currentUser !== null
     };
 };
+
 
 export default requiresLogin()(connect()(Dashboard));

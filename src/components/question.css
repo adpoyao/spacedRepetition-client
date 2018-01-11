@@ -5,7 +5,7 @@
   margin-top: 30px;
   color: white;
   /* border: 1px white solid; */
-  flex: 1 45%;
+  flex: 1 43.5%;
 }
 
 .resource {
@@ -14,8 +14,8 @@
   padding-bottom: 10px;
   text-align: center;
   position: relative;
-  left: 14%;
-  top: 10%;
+  left: 10%;
+  top: 5%;
   border-radius: 3px;
   line-height: 80px
 }
@@ -27,13 +27,29 @@
   line-height: 20px
 }
 
+.percentage {
+  font-size: 2em;
+  line-height: 50px
+}
+
+.accuracy {
+  color: white;
+  font-size: 0.3em;
+  line-height: 20px;
+  margin: 0;
+  padding: 0
+}
+
 .incorrect-caption {
   background: rgb(205, 44, 46);
-  color: white
+  color: white;
+  font-size: 0.2em;
 }
 
 .correct-caption {
-  margin: 0px
+  background: rgb(91, 170, 91);
+  color: white;
+  font-size: 0.2em;
 }
 
 .right-answer {
@@ -42,7 +58,7 @@
   padding-bottom: 10px;
   text-align: center;
   position: relative;
-  left: 14%;
+  left: 10%;
   top: 10%;
   border-radius: 3px;
   color: rgb(91, 170, 91);
@@ -52,4 +68,55 @@
 .wrong-answer {
   color:rgb(205, 44, 46);
   text-decoration: none;
+}
+
+.wrong-answer-japanese,
+.right-answer-japanese {
+  margin: 0;
+  line-height: 70px;
+  text-shadow:
+		-1px -1px 0 white,
+		1px -1px 0 white,
+		-1px 1px 0 white,
+		1px 1px 0 white;
+}
+
+.link-to-jisho {
+  position: relative;
+  bottom: -30px;
+  width: 100%;
+  left: 60%;
+  border-top: rgb(205, 44, 46) 10px solid;
+  padding-top: 10px;
+}
+
+@media all and (min-width: 548px) {
+  .link-to-jisho {
+    position: relative;
+    bottom: -60px;
+    width: 80%;
+    left: 70%;
+  }
+}
+
+@media all and (min-width: 548px) {
+  /* .wrong-answer-japanese,
+  .right-answer-japanese {
+    RESET line-height: 70px;
+  } */
+
+  /* accuracy { */
+    /* RESET font-size: 20
+    RESET: margin:
+    RESET: padding:
+  } */
+}
+
+@media all and (min-width: 1158px) {
+  .link-to-jisho {
+    position: relative;
+    bottom: -40px;
+    width: 50%;
+    left: 90%;
+  }
 }

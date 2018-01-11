@@ -41,21 +41,24 @@ class Question extends Component {
       katakana = <div>{this.props.katakana}</div>;
     }
     
-    let link = `https://jisho.org/search/${this.props.vocab}`
+    let link = `https://jisho.org/search/${this.props.vocab}`;
 
     if (this.props.answeredCorrectly){
+      let percentage = Math.floor(((this.props.totalRight+1) / (this.props.totalAnswered+1) *100));
       resource = (
       <div>
-        <p className="right-answer">正しい!<p className="correct-caption">Correct</p>
-</p>
+        <p className="right-answer"><h5 className="right-answer-japanese">正しい!</h5><p className="correct-caption">Correct</p><p className="accuracy">Word accuracy: <span className="percentage">{percentage}%</span></p>
+        </p>
       </div>
       )}
     else if(this.props.answeredCorrectly === false){
+      let percentage = Math.floor(((this.props.totalRight) / (this.props.totalAnswered+1) *100));
       resource = (
         <div className="resource">
-          <a href={link} target="_blank" className="wrong-answer">違います
+          <a href={link} target="_blank" className="wrong-answer"><h5 className="wrong-answer-japanese">違います</h5>
             <p className="incorrect-caption">Incorrect</p>
-            <p className="link-to-jisho">Click here to view resources</p>
+            <p className="accuracy">Word accuracy: <span className="percentage">{percentage}%</span></p>
+            <p className="link-to-jisho">Click to view dictionary 辞書</p>
           </a>
         </div>
       )
@@ -87,7 +90,9 @@ const mapStateToProps = state => ({
   showHiragana: state.setting.showHiragana,
   showKatakana: state.setting.showKatakana,
   answeredCorrectly: state.question.answeredCorrectly,
-  correctAnswer: state.question.question.correct
+  correctAnswer: state.question.question.correct,
+  totalRight: state.question.question.right,
+  totalAnswered: state.question.question.total
 })
 
 export default connect(mapStateToProps)(Question);
