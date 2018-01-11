@@ -11,16 +11,16 @@ export function LandingPage(props) {
     //DUMMY DATA
     let highlightsArray = [
         {
-            icon: <div className="highlight-circle">あ</div>,
-            highlight: 'Insert highlight #1 details, i.e. promote Spaced-Repetition learning method.'
+            icon: <div className="highlight-circle">等間隔 Spaced Repetition</div>,
+            highlight: 'Our spaced repetition algorithm is so smart, it can even tell what\'s going on inside your brain! That\'s how it helps you learn new words quickly, and retain them forever.'
         },
         {
-            icon: <div className="highlight-circle">い</div>,
-            highlight: 'Insert highlight #2 details'
+            icon: <div className="highlight-circle">進展 Track Progress</div>,
+            highlight: 'Track your progress as you go! Kurikaeshi shows you how well you\'re doing on each word. The higher your accuracy, the better you know your stuff.'
         },
         {
-            icon: <div className="highlight-circle">う</div>,
-            highlight: 'Insert highlight #3 details'
+            icon: <div className="highlight-circle">特装 Customize</div>,
+            highlight: 'Kurikaeshi is customizable! Pick and choose the settings that work best for you to maximize your Japanese learnage. '
         },
     ]
     
