@@ -25,9 +25,14 @@ export class HeaderBar extends React.Component {
         //TODO: Change Back after testing
         if (this.props.loggedIn) {
             navButton = (
-                <div>
-                    <button onClick={this.toggleSetting} className="setting">Setting</button>
-                    <Link to="/"><button onClick={() => this.logOut()} className="logout">Logout</button></Link>
+                <div className="username-button-container">
+                    <div className="setting-logout">
+                        <p className="logged-in-as">Logged in as <span className="username">{this.props.username.username}</span></p>
+                    </div>
+                    <div className="setting-logout">
+                        <button onClick={this.toggleSetting} className="setting">Setting</button>
+                        <Link to="/"><button onClick={() => this.logOut()} className="logout">Logout</button></Link>
+                    </div>
                 </div>
             );
         } else {
@@ -46,7 +51,7 @@ export class HeaderBar extends React.Component {
 
         return (
             <div className="header-bar">
-                <Link to="/" style={{ textDecoration: 'none' }}>
+                <Link to="/" style={{ textDecoration: 'none' }} className="logo-container">
                     <h1 className="site-name"><span className="logo">々</span>Kurikaeshi</h1>
                 </Link>
                 {navButton}
@@ -58,7 +63,8 @@ export class HeaderBar extends React.Component {
 
 const mapStateToProps = state => ({
     loggedIn: state.auth.currentUser !== null,
-    showSetting: state.setting.showSetting
+    showSetting: state.setting.showSetting,
+    username: state.auth.currentUser
 });
 
 export default connect(mapStateToProps)(HeaderBar);

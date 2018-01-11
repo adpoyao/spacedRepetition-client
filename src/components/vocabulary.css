@@ -4,9 +4,8 @@
   /* background: white; */
   border: 1px white solid;
   text-align: center;
-  position: relative;
-  left: 14%;
-  top: 5%
+  margin-left: 10%;
+  margin-top: 12px
 }
 
 .vocab {

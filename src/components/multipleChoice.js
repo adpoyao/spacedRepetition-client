@@ -7,38 +7,38 @@ class MultipleChoice extends Component {
   let selection;
   if(!this.props.questionAnswered){
     selection=(
-      <div className="multi-choice-container" onClick={this.props.onClick}>
+      <button className="multi-choice-container" onClick={this.props.onClick}>
         {this.props.choice}
-      </div>
+      </button>
     )
   } else {
     if(this.props.answeredCorrectly){
       if(this.props.choice === this.props.correctAnswer){
         selection = (
-          <div className="multi-choice-container" style={{color: 'green'}}>
+          <button className="multi-choice-container" disabled="true" style={{color: 'green'}}>
             {this.props.choice}
-         </div>
+         </button>
         )
       } else {
         selection= (
-          <div className="multi-choice-container">
+          <button className="multi-choice-container" disabled="true">
             {this.props.choice}
-         </div>
+         </button>
         )
       }
     }
     if(!this.props.answeredCorrectly){
       if(this.props.choice === this.props.correctAnswer){
         selection = (
-          <div className="multi-choice-container" style={{color: 'green'}}>
+          <button className="multi-choice-container" disabled="true" style={{color: 'green'}}>
             {this.props.choice}
-         </div>
+         </button>
         )
       } else {
         selection= (
-          <div className="multi-choice-container" style={{color: 'red'}}>
+          <button className="multi-choice-container" disabled="true" style={{color: 'red'}}>
             {this.props.choice}
-         </div>
+         </button>
         )
       }
     }

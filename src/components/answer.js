@@ -9,7 +9,8 @@ import './answer.css';
 
 class Answer extends Component {
 
-  handleOnClick = (item) => {
+  handleOnClick = (e, item) => {
+    e.preventDefault();
     let evaluate;
     item === this.props.correctAnswer ? evaluate = true : evaluate = false;
     this.props.dispatch(evaluateAnswer(true, evaluate));
@@ -44,12 +45,17 @@ class Answer extends Component {
     answerArray = this.shuffle(answerArray);
 
     let choices = answerArray.map((item, index) => {
-      return <MultipleChoice key={index} choice={item} onClick={()=>this.handleOnClick(item)}/>
+      return <MultipleChoice key={index} choice={item} onClick={(e)=>this.handleOnClick(e, item)}/>
     });
     
     return(
       <div className="answer-container">
-        {choices}
+        <form>
+        <fieldset>
+          <legend>Select an answer:</legend>
+            {choices}
+        </fieldset>
+        </form>
       </div>
     )
   }

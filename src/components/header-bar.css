@@ -13,6 +13,11 @@
   margin: 0
 }
 
+.logo-container {
+  align-items: flex-end;
+  display: flex
+}
+
 .logo {
   display: inline-block;
   background: rgb(205, 44, 46);
@@ -74,8 +79,30 @@
   width: 70px;
 }
 
+.setting-logout {
+  display: flex;
+  align-items: center;
+}
+
 .setting {
   margin-right: 5px
+}
+
+.logged-in-as {
+  font-size: 14px;
+  text-align: right;
+}
+
+.username {
+  color: rgb(205, 44, 46);
+}
+
+.username-button-container {
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  flex: 0;
+  flex-flow: column
 }
 
 @media all and (min-width: 580px) {
@@ -85,5 +112,15 @@
   .logout {
     font-size: 0.7em;
     width: 100px;
+  }
+}
+
+@media all and (min-width: 820px) {
+  .username-button-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    flex: 0 55%;
+    flex-flow: row wrap
   }
 }

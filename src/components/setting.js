@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { toggleSetting, toggleRomaji, toggleHiragana, toggleKatakana } from '../actions';
 
+import backgroundImage from '../assets/tokyo-streets-night-photography-3.jpg';
 import './setting.css';
 
 class Setting extends Component {
@@ -39,7 +40,7 @@ class Setting extends Component {
     }
 
     return(
-      <div className="overlay" id="modal">
+      <div className="overlay" id="modal" style={{backgroundImage: `url(${backgroundImage})`}}>
         <div className="content">
           <h3>Setting</h3>
           <div>

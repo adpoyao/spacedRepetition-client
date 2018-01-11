@@ -2,10 +2,24 @@
   /* dimension correlate with questions component */
   width: 50%;
   height: 412px;
-  margin-top: 3%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   flex-flow: column wrap;
   padding-left: 3%;
   flex: 1 45%
+}
+
+form {
+  margin-top: 33px
+}
+
+fieldset {
+  border: 0;
+}
+
+legend { 
+  color: white;
+  font-size: 0.8em;
+  padding: 5px 10px;
+  background: rgb(205, 44, 46);
 }
