@@ -3,6 +3,8 @@ import {connect} from 'react-redux';
 import {Redirect} from 'react-router-dom';
 import requiresLogin from './requires-login';
 import {fetchProtectedData} from '../actions/protected-data';
+import backgroundImage from '../assets/tokyo-streets-night-photography-2.jpg';
+
 
 import Question from './question';
 import Answer from './answer';
@@ -25,7 +27,7 @@ export class Dashboard extends React.Component {
         // }
 
         return (
-            <div className="dashboard">
+            <div className="dashboard" style={{backgroundImage: `url(${backgroundImage})`}}>
                 <Question />
                 <Answer />
                 <FooterBar />

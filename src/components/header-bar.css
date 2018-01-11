@@ -33,7 +33,9 @@
 }
 
 .login,
-.signup {
+.signup,
+.logout,
+.setting {
   position:relative;
   vertical-align: middle;
   color: black;
@@ -55,23 +57,32 @@
   margin-left: 5px;
 }
 
-.login:hover {
+.login:hover,
+.setting:hover {
   border: 1px solid rgb(205, 44, 46);
   color: rgb(205, 44, 46)
 }
 
-.signup {
-  
-}
-
-.signup:hover {
+.signup:hover,
+.logout:hover {
   border: 1px solid rgb(205, 44, 46);
   color: rgb(205, 44, 46)
+}
+
+.setting,
+.logout {
+  width: 70px;
+}
+
+.setting {
+  margin-right: 5px
 }
 
 @media all and (min-width: 580px) {
   .login,
-  .signup {
+  .signup,
+  .setting,
+  .logout {
     font-size: 0.7em;
     width: 100px;
   }

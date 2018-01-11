@@ -41,13 +41,22 @@ class Question extends Component {
       katakana = <div>{this.props.katakana}</div>;
     }
     
-    let link = `https://jisho.org/search/${this.props.correctAnswer}`
-    if (this.props.answeredCorrectly === null){
-      resource = <div></div>}
-    else if(!this.props.answeredCorrectly){
+    let link = `https://jisho.org/search/${this.props.vocab}`
+
+    if (this.props.answeredCorrectly){
+      resource = (
+      <div>
+        <p className="right-answer">正しい!<p className="correct-caption">Correct</p>
+</p>
+      </div>
+      )}
+    else if(this.props.answeredCorrectly === false){
       resource = (
         <div className="resource">
-          <a href={link} target="_blank">View Answers from Jisho.org >></a>
+          <a href={link} target="_blank" className="wrong-answer">違います
+            <p className="incorrect-caption">Incorrect</p>
+            <p className="link-to-jisho">Click here to view resources</p>
+          </a>
         </div>
       )
     }

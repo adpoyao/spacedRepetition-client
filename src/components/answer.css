@@ -2,9 +2,10 @@
   /* dimension correlate with questions component */
   width: 50%;
   height: 412px;
-  margin-top: 10%;
+  margin-top: 3%;
   display: flex;
   justify-content: flex-end;
   flex-flow: column wrap;
   padding-left: 3%;
+  flex: 1 45%
 }

@@ -26,14 +26,14 @@ export class HeaderBar extends React.Component {
         if (this.props.loggedIn) {
             navButton = (
                 <div>
-                    <button onClick={this.toggleSetting}>Setting</button>
-                    <Link to="/"><button onClick={() => this.logOut()}>Log out</button></Link>
+                    <button onClick={this.toggleSetting} className="setting">Setting</button>
+                    <Link to="/"><button onClick={() => this.logOut()} className="logout">Logout</button></Link>
                 </div>
             );
         } else {
             navButton = (
                 <div className="nav-button">
-                    <Link to="/login" style={{ textDecoration: 'none' }}><button className="login">Log In</button></Link>
+                    <Link to="/login" style={{ textDecoration: 'none' }}><button className="login">Login</button></Link>
                     <Link to="/signup" style={{ textDecoration: 'none' }}><button className="signup">Sign Up</button></Link>
                 </div>
             )

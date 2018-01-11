@@ -2,21 +2,54 @@
   /* dimension correlate with Answer component */
   width: 50%;
   height: 400px;
-  margin-top: 10%;
-  background: rgb(120, 165, 174);
-  border-top: 1px black solid;
-  border-right: 1px black solid;
-  border-bottom: 1px black solid;
+  margin-top: 3%;
+  color: white;
+  /* border: 1px white solid; */
+  flex: 1 45%;
 }
 
 .resource {
-  margin-top: 50px;
-  position: absolute;
-  background: white;
-  width: 400px;
-  border: 1px black solid;
-  height: 50px;
+  font-size: 70px;
+  width: 90%;
+  padding-bottom: 10px;
   text-align: center;
-  line-height: 50px;
-  padding: 10px
+  position: relative;
+  left: 14%;
+  top: 10%;
+  border-radius: 3px;
+  line-height: 80px
+}
+
+.link-to-jisho,
+.incorrect-caption,
+.correct-caption {
+  font-size: 20px;
+  line-height: 20px
+}
+
+.incorrect-caption {
+  background: rgb(205, 44, 46);
+  color: white
+}
+
+.correct-caption {
+  margin: 0px
+}
+
+.right-answer {
+  font-size: 70px;
+  width: 90%;
+  padding-bottom: 10px;
+  text-align: center;
+  position: relative;
+  left: 14%;
+  top: 10%;
+  border-radius: 3px;
+  color: rgb(91, 170, 91);
+  margin-top: 5%
+}
+
+.wrong-answer {
+  color:rgb(205, 44, 46);
+  text-decoration: none;
 }

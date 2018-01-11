@@ -2,3 +2,23 @@
   display: flex;
   align-self: flex-end;
 }
+
+.next  {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  background: rgb(205, 44, 46);
+  outline: 0;
+  color: white;
+  position: relative;
+  top: 40px;
+  right: 10%
+}
+
+.answered {
+
+}
+
+.not-answered {
+
+}

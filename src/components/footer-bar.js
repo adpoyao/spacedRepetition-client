@@ -15,13 +15,13 @@ class FooterBar extends Component {
   if(this.props.questionAnswered){
     nextButton =(
       <div className="next-button">
-        <button onClick={this.handleNextQuestion}>Next</button>
+        <button className="next answered" onClick={this.handleNextQuestion}>Next</button>
       </div>
     )
   } else {
     nextButton =(
       <div className="next-button">
-        <button style={{color: "gray"}}>Next</button>
+        <button className="next not-answered">Next</button>
       </div>
     )
   }
