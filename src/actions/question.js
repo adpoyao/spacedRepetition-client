@@ -1,3 +1,6 @@
+import {API_BASE_URL} from '../config';
+import {normalizeResponseErrors} from './utils';
+
 import { TOGGLE_EXAMPLE, ATTACH_QUESTIONS, EVALUATE_ANSWER, 
   NEXT_QUESTION, NEXT_QUESTION_ERROR, NEXT_QUESTION_REQUEST, 
   NEXT_QUESTION_SUCCESS } from './actionType';
@@ -34,30 +37,20 @@ export const nextQuestionSuccess = (question) => ({
 })
 
 // Async --
-export const nextQuestion = (user, boolean) => dispatch => {
-  dispatch(nextQuestionRequest());
-  return console.log('user: ', user, 'boolean: ', boolean)
+export const nextQuestion = (username, boolean) => dispatch => {
+  // dispatch(nextQuestionRequest());
+  return fetch(`${API_BASE_URL}/users/answer`, {
+    method: 'POST',
+    body: JSON.stringify({username, boolean}),
+    headers: {
+			'Content-Type': 'application/json', 
+      'Accept': 'application/json' 
+    }
+  }).then(res => normalizeResponseErrors(res))
+    .then(res => res.json())
+    // .then(res => console.log('after res.json', res))
+    .then(question => dispatch(nextQuestionSuccess(question)))
+    .catch(err => {
+      dispatch(nextQuestionError(err))     
+    })
 };
-
-// export const registerUser = user => dispatch => {
-//   return fetch(`${API_BASE_URL}/users`, {
-//       method: 'POST',
-//       headers: {
-//           'content-type': 'application/json'
-//       },
-//       body: JSON.stringify(user)
-//   })
-//       .then(res => normalizeResponseErrors(res))
-//       .then(res => res.json())
-//       // .then(res => dispatch(attachQuestions(res.questions)))
-//       .catch(err => {
-//           const {reason, message, location} = err;
-//           if (reason === 'ValidationError') {
-//               // Convert ValidationErrors into SubmissionErrors for Redux Form
-//               return Promise.reject(
-//                   new SubmissionError({
-//                       [location]: message
-//                   })
-//               );
-//           }
-//       });

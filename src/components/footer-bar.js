@@ -36,7 +36,7 @@ class FooterBar extends Component {
 }
 
 const mapStateToProps = state => ({
-  user: state.auth.currentUser._id,
+  user: state.auth.currentUser.username,
   answeredCorrectly: state.question.answeredCorrectly,
   questionAnswered: state.question.questionAnswered
 })

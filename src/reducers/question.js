@@ -41,7 +41,9 @@ export const reducer = (state=initialState, action) => {
       return Object.assign({}, state, {
         loading: false,
         error: false,
-        question: action.question
+        question: action.question,
+        questionAnswered: false,
+        answeredCorrectly: null
       });
   }
   return state
