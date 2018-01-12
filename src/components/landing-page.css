@@ -51,7 +51,13 @@
   background-color: rgb(205, 44, 46);
   color: white;
   width: 200px;
+  height: 25px;
   margin-top: 40%;
+}
+
+.white {
+  line-height: 25px;
+  color: white;
 }
 
 .highlight-column {
