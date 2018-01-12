@@ -50,19 +50,22 @@
 .highlight-circle {
   background-color: rgb(205, 44, 46);
   color: white;
-  width: 250px;
+  width: 200px;
   height: 25px;
   margin-top: 40%;
 }
 
-.white {
+.line-height {
   line-height: 26px;
+}
+
+.white {
   color: white;
 }
 
 .highlight-column {
-  margin: 0 40px 100px;
-  width: 250px;
+  margin: 10px 40px 0;
+  width: 200px;
 }
 
 @media all and (min-width: 580px) {

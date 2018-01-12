@@ -12,20 +12,20 @@ export function LandingPage(props) {
     let highlightsArray = [
         {
             icon: <div className="highlight-circle hoverable">
-            <span className="hover white">等間隔</span>
-            <span className="normal font2 white">Spaced Repetition</span></div>,
+            <span className="hover white line-height">等間隔</span>
+            <span className="normal font2 white line-height">Spaced Repetition</span></div>,
             highlight: 'Learn new words quickly and retain them forever with our super-smart spaced repetition algorithm!'
         },
         {
             icon: <div className="highlight-circle hoverable">
-            <span className="hover white">進展</span>
-            <span className="normal font2 white">Track Progress</span></div>,
+            <span className="hover white line-height">進展</span>
+            <span className="normal font2 white line-height">Track Progress</span></div>,
             highlight: 'Track your progress as you go! The higher your accuracy, the better you know your stuff.'
         },
         {
             icon: <div className="highlight-circle hoverable">
-            <span className="hover white">特装</span>
-            <span className="normal font2 white">Customize</span></div>,
+            <span className="hover white line-height">特装</span>
+            <span className="normal font2 white line-height">Customize</span></div>,
             highlight: 'Kurikaeshi is customizable! Pick and choose your settings to maximize your Japanese learnage. '
         },
     ]
@@ -47,7 +47,9 @@ export function LandingPage(props) {
         <div className="home" style={{backgroundImage: `url(${backgroundImage})`}}>
             <h2 className="landing-intro">Expand your learning<br></br>potential with Kurikaeshi</h2>
             <div className="begin-learning">
-                <Link to="/signup" style={{ textDecoration: 'none' }}><button className="begin-button">Begin Learning!</button></Link>
+                <Link to="/signup" style={{ textDecoration: 'none' }}><button className="begin-button hoverable">
+                <span className="hover white">行きましょう！</span>
+                <span className="normal white font2">Let's go!</span></button></Link>
             </div>
             
             {highlights}
