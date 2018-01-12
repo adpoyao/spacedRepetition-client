@@ -51,11 +51,20 @@
   background-color: rgb(205, 44, 46);
   color: white;
   width: 200px;
+  height: 25px;
   margin-top: 40%;
 }
 
+.line-height {
+  line-height: 26px;
+}
+
+.white {
+  color: white;
+}
+
 .highlight-column {
-  margin: 10px 40px 10px;
+  margin: 10px 40px 0;
   width: 200px;
 }
 

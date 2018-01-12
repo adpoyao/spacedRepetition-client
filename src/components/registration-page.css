@@ -5,10 +5,3 @@
   align-content: center;
   height: 450px
 }
-
-.login-signup-title {
-  flex: 1 100%;
-  color: white;
-  font-size: 2em;
-  line-height: 30px
-}

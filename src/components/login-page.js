@@ -3,6 +3,8 @@ import {connect} from 'react-redux';
 import {Link, Redirect} from 'react-router-dom';
 import backgroundImage from '../assets/tokyo-streets-night-photography.jpg';
 
+import './login-page.css';
+
 import LoginForm from './login-form';
 
 export function LoginPage(props) {
@@ -15,8 +17,10 @@ export function LoginPage(props) {
         <div 
             className="home"
             style={{backgroundImage: `url(${backgroundImage})`}}>
-            <h2 className="login-signup-title">Log In</h2>
-            <LoginForm />
+            <div className="login-signup-box red">
+                <h2 className="login-signup-title">Log In</h2>
+                <LoginForm />
+            </div>
             {/* <Link to="/">Login</Link> */}
         </div>
     );
