@@ -15,10 +15,12 @@ export function RegistrationPage(props) {
     }
     return (
         <div 
-            className="home"
+            className="home login-page"
             style={{backgroundImage: `url(${backgroundImage})`}}>
-            <h2>Sign Up</h2>
-            <RegistrationForm />
+            <div className="login-container">
+                <h2 className="login-signup-title">Sign Up</h2>
+                <RegistrationForm />
+            </div>
             {/* <Link to="/">Login</Link> */}
         </div>
     );
