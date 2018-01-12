@@ -42,14 +42,15 @@ export const nextQuestionSuccess = (question) => ({
 })
 
 // Async --
-export const nextQuestion = (username, boolean) => dispatch => {
-  // dispatch(nextQuestionRequest());
+export const nextQuestion = (username, boolean) => (dispatch, getState) => {
+  const authToken = getState().auth.authToken;
   return fetch(`${API_BASE_URL}/users/answer`, {
     method: 'POST',
     body: JSON.stringify({username, boolean}),
     headers: {
 			'Content-Type': 'application/json', 
-      'Accept': 'application/json' 
+      'Accept': 'application/json',
+      'Authorization': `Bearer ${authToken}` 
     }
   }).then(res => normalizeResponseErrors(res))
     .then(res => res.json())
