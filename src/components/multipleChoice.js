@@ -15,7 +15,7 @@ class MultipleChoice extends Component {
     if(this.props.answeredCorrectly){
       if(this.props.choice === this.props.correctAnswer){
         selection = (
-          <button className="multi-choice-container" disabled="true" style={{color: 'green'}}>
+          <button className="multi-choice-container correct" disabled="true">
             {this.props.choice}
          </button>
         )
@@ -30,13 +30,13 @@ class MultipleChoice extends Component {
     if(!this.props.answeredCorrectly){
       if(this.props.choice === this.props.correctAnswer){
         selection = (
-          <button className="multi-choice-container" disabled="true" style={{color: 'green'}}>
+          <button className="multi-choice-container correct" disabled="true">
             {this.props.choice}
          </button>
         )
       } else {
         selection= (
-          <button className="multi-choice-container" disabled="true" style={{color: 'red'}}>
+          <button className="multi-choice-container wrong-selected" disabled="true">
             {this.props.choice}
          </button>
         )

@@ -1,7 +1,8 @@
 .footer-bar {
   display: flex;
   align-self: flex-end;
-  flex: 1 1 1%;
+  justify-content: flex-end;
+  flex: 1 1 1%;;
 }
 
 .next  {
@@ -12,24 +13,26 @@
   outline: 0;
   color: white;
   position: relative;
-  top: 40px;
-  right: -05px
+  top: 50%;
+  margin-right: 20px;
+  font-size: 1em;
+
 }
 
-@media all and (min-width: 608px) {
+@media all and (min-width: 450px) {
   .next  {
-    font-size: 1.2em;
-    height: 100px;
-    width: 100px;
-    right: 10%
+    font-size: 1em;
+    height: 90px;
+    width: 90px;
+    /* right: 20% */
   }
 }
 
-@media all and (min-width: 756px) {
+@media all and (min-width: 740px) {
   .next  {
     font-size: 1.2em;
-    height: 100px;
-    width: 100px;
-    right: 50%
+    height: 120px;
+    width: 120px;
+    /* right: 50% */
   }
 }

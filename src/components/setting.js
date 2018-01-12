@@ -24,19 +24,19 @@ class Setting extends Component {
 
     let romajiButton, hiraganaButton, katakanaButton;
     if(this.props.showRomaji){
-      romajiButton = <button onClick={this.toggleRomaji}>Display On</button>
+      romajiButton = <button onClick={this.toggleRomaji} className="setting-button button-on">Display On</button>
     } else {
-      romajiButton = <button onClick={this.toggleRomaji}>Display Off</button>
+      romajiButton = <button onClick={this.toggleRomaji} className="setting-button button-off">Display Off</button>
     }
     if(this.props.showHiragana){
-      hiraganaButton = <button onClick={this.toggleHiragana}>Display On</button>
+      hiraganaButton = <button onClick={this.toggleHiragana} className="setting-button button-on">Display On</button>
     } else {
-      hiraganaButton = <button onClick={this.toggleHiragana}>Display Off</button>
+      hiraganaButton = <button onClick={this.toggleHiragana} className="setting-button button-off">Display Off</button>
     }
     if(this.props.showKatakana){
-      katakanaButton = <button onClick={this.toggleKatakana}>Display On</button>
+      katakanaButton = <button onClick={this.toggleKatakana} className="setting-button button-on">Display On</button>
     } else {
-      katakanaButton = <button onClick={this.toggleKatakana}>Display Off</button>
+      katakanaButton = <button onClick={this.toggleKatakana} className="setting-button button-off">Display Off</button>
     }
 
     return(
@@ -44,18 +44,18 @@ class Setting extends Component {
         <div className="content">
           <h3>Setting</h3>
           <div>
-            <p>Romaji</p>
+            <p className="setting-label">Romaji</p>
             {romajiButton}
           </div>
           <div>
-            <p>Hiragana</p>
+            <p className="setting-label">Hiragana</p>
             {hiraganaButton}
           </div>
           <div>
-            <p>Katakana</p>
+            <p className="setting-label">Katakana</p>
             {katakanaButton}
           </div>
-          <a onClick={this.toggleSetting}>Close</a>
+          <button onClick={this.toggleSetting} className="setting-close">Close</button>
         </div>
       </div>
     )

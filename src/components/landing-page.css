@@ -13,10 +13,10 @@
   margin-top: 80px;
   line-height: 80px;
   text-shadow:
-  -1px -1px 0 black,
-  1px -1px 0 black,
-  -1px 1px 0 black,
-  1px 1px 0 black;
+  -1px -1px 0 grey,
+  1px -1px 0 grey,
+  -1px 1px 0 grey,
+  1px 1px 0 grey;
 }
 
 .begin-learning {
@@ -66,6 +66,10 @@
 .highlight-column {
   margin: 10px 40px 0;
   width: 200px;
+}
+
+.highlight-column:last-child {
+  margin-bottom: 100px;
 }
 
 @media all and (min-width: 580px) {

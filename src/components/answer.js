@@ -48,13 +48,21 @@ class Answer extends Component {
       return <MultipleChoice key={index} choice={item} onClick={(e)=>this.handleOnClick(e, item)}/>
     });
     
+    let link = `https://jisho.org/search/${this.props.vocab}`;
+    let jisho;
+    if(this.props.answeredCorrectly === false){
+      jisho=(
+        <div className="jishou"><a href={link} target="_blank" className="jishou-link"><h5 className="jishou-kanji">辞書</h5><p className="dictionary">dictionary</p></a></div>
+      )
+    }
     return(
       <div className="answer-container">
-        <form>
+        <form className="answer-form">
         <fieldset>
           <legend>Select an answer:</legend>
             {choices}
         </fieldset>
+        {jisho}
         </form>
       </div>
     )
@@ -62,7 +70,9 @@ class Answer extends Component {
 }
 
 const mapStateToProps = state => ({
-  correctAnswer: state.question.question.correct
+  correctAnswer: state.question.question.correct,
+  vocab: state.question.question.vocab,
+  answeredCorrectly: state.question.answeredCorrectly,
 })
 
 export default connect(mapStateToProps)(Answer);
