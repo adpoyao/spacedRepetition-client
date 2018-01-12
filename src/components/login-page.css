@@ -10,7 +10,6 @@
 }
 
 .login-container {
-  background: rgb(120, 165, 174);
-  height: 400px;
+  background: rgba(120, 165, 174, 0.9);
   width: 400px
 }
