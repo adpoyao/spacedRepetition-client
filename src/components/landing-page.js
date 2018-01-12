@@ -14,19 +14,19 @@ export function LandingPage(props) {
             icon: <div className="highlight-circle hoverable">
             <span className="hover white">等間隔</span>
             <span className="normal font2 white">Spaced Repetition</span></div>,
-            highlight: 'Our spaced repetition algorithm is so smart, it can even tell what\'s going on inside your brain! That\'s how it helps you learn new words quickly, and retain them forever.'
+            highlight: 'Learn new words quickly and retain them forever with our super-smart spaced repetition algorithm!'
         },
         {
             icon: <div className="highlight-circle hoverable">
             <span className="hover white">進展</span>
             <span className="normal font2 white">Track Progress</span></div>,
-            highlight: 'Track your progress as you go! Kurikaeshi shows you how well you\'re doing on each word. The higher your accuracy, the better you know your stuff.'
+            highlight: 'Track your progress as you go! The higher your accuracy, the better you know your stuff.'
         },
         {
             icon: <div className="highlight-circle hoverable">
             <span className="hover white">特装</span>
             <span className="normal font2 white">Customize</span></div>,
-            highlight: 'Kurikaeshi is customizable! Pick and choose the settings that work best for you to maximize your Japanese learnage. '
+            highlight: 'Kurikaeshi is customizable! Pick and choose your settings to maximize your Japanese learnage. '
         },
     ]
     
