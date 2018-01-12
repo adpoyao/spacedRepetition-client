@@ -22,7 +22,7 @@ class Question extends Component {
     else {
       example = (
       <div>
-        <p>Example Sentence:</p>
+        <p className="example-sentence">Example Sentence:</p>
         <Example example={this.props.example} />
         <button onClick={this.handleToggleExample}>Hide example </button>
       </div>)
@@ -41,8 +41,6 @@ class Question extends Component {
       katakana = <div>{this.props.katakana}</div>;
     }
     
-    let link = `https://jisho.org/search/${this.props.vocab}`;
-
     if (this.props.answeredCorrectly){
       let percentage = Math.floor(((this.props.totalRight+1) / (this.props.totalAnswered+1) *100));
       resource = (
@@ -55,11 +53,9 @@ class Question extends Component {
       let percentage = Math.floor(((this.props.totalRight) / (this.props.totalAnswered+1) *100));
       resource = (
         <div className="resource">
-          <a href={link} target="_blank" className="wrong-answer"><h5 className="wrong-answer-japanese">違います</h5>
+          <h5 className="wrong-answer wrong-answer-japanese">違います</h5>
             <p className="incorrect-caption">Incorrect</p>
             <p className="accuracy">Word accuracy: <span className="percentage">{percentage}%</span></p>
-            <p className="link-to-jisho">Click to view dictionary 辞書</p>
-          </a>
         </div>
       )
     }

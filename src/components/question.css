@@ -1,7 +1,7 @@
 .container {
   /* dimension correlate with Answer component */
   width: 50%;
-  height: 400px;
+  height: 50vh;
   margin-top: 30px;
   color: white;
   /* border: 1px white solid; */
@@ -90,26 +90,20 @@
   padding-top: 10px;
 }
 
-@media all and (min-width: 548px) {
-  .link-to-jisho {
-    position: relative;
-    bottom: -60px;
-    width: 80%;
-    left: 70%;
+.example-sentence {
+  font-style: italic;
+}
+
+@media all and (min-width: 438px) {
+  .right-answer {
+    font-size: 70px;
   }
 }
 
-@media all and (min-width: 548px) {
-  /* .wrong-answer-japanese,
-  .right-answer-japanese {
-    RESET line-height: 70px;
-  } */
-
-  /* accuracy { */
-    /* RESET font-size: 20
-    RESET: margin:
-    RESET: padding:
-  } */
+@media all and (min-width: 640px) {
+  .container {
+    height: 75vh;
+  }
 }
 
 @media all and (min-width: 1158px) {

@@ -5,9 +5,10 @@
   border: 1px white solid;
   text-align: center;
   margin-left: 10%;
-  margin-top: 12px
+  margin-top: 12px;
+  line-height: 1.5;
 }
 
 .vocab {
-  font-size: 2.6em;
+  font-size: 3em;
 }

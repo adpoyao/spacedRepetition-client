@@ -82,6 +82,7 @@
 .setting-logout {
   display: flex;
   align-items: center;
+  margin-right: 10px
 }
 
 .setting {
@@ -91,6 +92,7 @@
 .logged-in-as {
   font-size: 14px;
   text-align: right;
+  margin-right: 10
 }
 
 .username {
@@ -99,10 +101,10 @@
 
 .username-button-container {
   display: flex;
-  align-items: flex-end;
+  justify-content: flex-end;
   width: 100%;
-  flex: 0;
-  flex-flow: column
+  flex: 0 55%;
+  flex-flow: row wrap
 }
 
 @media all and (min-width: 580px) {
