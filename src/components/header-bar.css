@@ -13,10 +13,6 @@
   margin: 0
 }
 
-.scooch {
-  margin-top: 5px;
-}
-
 .logo-container {
   align-items: flex-end;
   display: flex
@@ -26,11 +22,11 @@
   display: inline-block;
   background: rgb(205, 44, 46);
   color: white;
-  margin-right: 10px;
+  margin-right: 5px;
   border-radius: 50%;
   width: 30px;
   height: 30px;
-  font-size: 0.7em;
+  font-size: 0.8em;
   line-height: 35px;
   align-self: center;
   text-align: center;
