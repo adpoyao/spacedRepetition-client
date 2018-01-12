@@ -12,14 +12,15 @@
 
 .content {
 	color: #fff;
-	/* background: rgb(71, 118, 128); */
 	position: relative;
 	height: auto;
-	/* width: 600px; */
 	border-radius: 3px;
 	top: 15%;
 	margin: auto auto;
 	border: 1px solid rgba(0,0,0,0.1);
+	display: flex;
+	flex-flow: column wrap;
+	align-items: center
 }
 
 .content h3 {
@@ -29,6 +30,60 @@
 	font-size: 2em;
 	/* font-weight: 300; */
 	opacity: 0.8;
-	background: rgba(0,0,0,0.1);
+	/* background: rgba(0,0,0,0.1); */
 	border-radius: 3px 3px 0 0;
+}
+
+.setting-label {
+	text-align: center
+}
+
+.setting-button {
+  position:relative;
+  vertical-align: middle;
+  color: black;
+  display: inline-block;
+  height: 30px;
+  text-align: center;
+  transition: 0.5s;
+  padding: 0 20px;
+  cursor: pointer;
+  transition:0.5s;
+  border: 1px solid black;
+  font-size: 0.7em;
+  width: 120px;
+	outline: none;
+}
+
+.button-on {
+  color: rgb(66, 127, 141);
+  border: 1px solid rgb(66, 127, 141);
+}
+
+.button-off {
+  color: rgb(205, 44, 46);
+  border: 1px solid rgb(205, 44, 46);
+}
+
+.setting-close {
+  position:relative;
+  vertical-align: middle;
+  color: white;
+  display: inline-block;
+  height: 30px;
+  text-align: center;
+  transition: 0.5s;
+  padding: 0 20px;
+  cursor: pointer;
+  transition:0.5s;
+  border: 1px solid black;
+  font-size: 0.7em;
+  width: 120px;
+	outline: none;
+	margin-top: 50px
+}
+
+.setting-close {
+	background-color: rgb(66, 127, 141);
+  border: 1px solid rgb(66, 127, 141);
 }
