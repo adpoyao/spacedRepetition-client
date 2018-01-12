@@ -9,6 +9,13 @@ import './answer.css';
 
 class Answer extends Component {
 
+  shouldComponentUpdate = (nextProps, nextState) => {
+    if(!this.props.questionAnswered) { return false;
+    } else {
+    return true
+    }
+  }
+
   handleOnClick = (e, item) => {
     e.preventDefault();
     let evaluate;
@@ -73,6 +80,7 @@ const mapStateToProps = state => ({
   correctAnswer: state.question.question.correct,
   vocab: state.question.question.vocab,
   answeredCorrectly: state.question.answeredCorrectly,
+  questionAnswered: state.question.questionAnswered
 })
 
 export default connect(mapStateToProps)(Answer);
