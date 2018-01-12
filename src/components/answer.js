@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 
 import MultipleChoice from './multipleChoice';
 import { randomChooser } from '../wordBank/wordBank';
-import { evaluateAnswer } from '../actions';
+import { evaluateAnswer, selectAnswer } from '../actions';
+import Jisho from './jisho';
 
 import './answer.css';
 
@@ -20,7 +21,8 @@ class Answer extends Component {
     e.preventDefault();
     let evaluate;
     item === this.props.correctAnswer ? evaluate = true : evaluate = false;
-    this.props.dispatch(evaluateAnswer(true, evaluate));
+    this.props.dispatch(selectAnswer(item));
+    this.props.dispatch(evaluateAnswer(true, evaluate, item));
   }
 
   shuffle = array => {
@@ -55,13 +57,6 @@ class Answer extends Component {
       return <MultipleChoice key={index} choice={item} onClick={(e)=>this.handleOnClick(e, item)}/>
     });
     
-    let link = `https://jisho.org/search/${this.props.vocab}`;
-    let jisho;
-    if(this.props.answeredCorrectly === false){
-      jisho=(
-        <div className="jishou"><a href={link} target="_blank" className="jishou-link"><h5 className="jishou-kanji">辞書</h5><p className="dictionary">dictionary</p></a></div>
-      )
-    }
     return(
       <div className="answer-container">
         <form className="answer-form">
@@ -69,7 +64,7 @@ class Answer extends Component {
           <legend>Select an answer:</legend>
             {choices}
         </fieldset>
-        {jisho}
+        <Jisho />
         </form>
       </div>
     )

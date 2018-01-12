@@ -3,7 +3,7 @@ import {normalizeResponseErrors} from './utils';
 
 import { TOGGLE_EXAMPLE, ATTACH_QUESTIONS, EVALUATE_ANSWER, 
   NEXT_QUESTION, NEXT_QUESTION_ERROR, NEXT_QUESTION_REQUEST, 
-  NEXT_QUESTION_SUCCESS } from './actionType';
+  NEXT_QUESTION_SUCCESS, SELECT_ANSWER } from './actionType';
 
 export const toggleExample = boolean => ({
   type: TOGGLE_EXAMPLE,
@@ -15,10 +15,15 @@ export const attachQuestions = questions => ({
   questions
 })
 
+export const selectAnswer = selectedAnswer => ({
+  type: SELECT_ANSWER,
+  selectedAnswer
+})
+
 export const evaluateAnswer = (questionAnswered, answeredCorrectly) => ({
   type: EVALUATE_ANSWER,
   questionAnswered,
-  answeredCorrectly
+  answeredCorrectly,
 })
 
 // Sync --

@@ -1,14 +1,16 @@
-.home {
-  display: flex;
-  flex-flow: row-wrap;
-  justify-content: center;
-  align-content: center;
-  height: 450px
-}
-
 .login-signup-title {
   flex: 1 100%;
   color: white;
   font-size: 2em;
-  line-height: 100px
+  line-height: 60px
+}
+
+.login-page {
+  align-items: center
+}
+
+.login-container {
+  background: rgb(120, 165, 174);
+  height: 400px;
+  width: 400px
 }

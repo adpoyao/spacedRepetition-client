@@ -52,7 +52,7 @@ export class HeaderBar extends React.Component {
         return (
             <div className="header-bar">
                 <Link to="/" style={{ textDecoration: 'none' }} className="logo-container">
-                    <h1 className="site-name"><span className="logo">々</span>Kurikaeshi</h1>
+                    <h1 className="site-name"><span className="logo">々</span><span className="kurikaeshi">Kurikaeshi</span></h1>
                 </Link>
                 {navButton}
                 {settingModal}

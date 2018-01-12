@@ -34,7 +34,16 @@ class MultipleChoice extends Component {
             {this.props.choice}
          </button>
         )
-      } else {
+      } 
+      // else if (this.props.choice === this.props.selectedAnswer){
+      //   console.log(this.props.selectedAnswer);
+      //   selection= (
+      //     <button className="multi-choice-container wrong-selected" disabled="true">
+      //       {this.props.choice}
+      //    </button>
+      //   )
+      // }
+      else if (this.props.choice !== this.props.selectedAnswer){
         selection= (
           <button className="multi-choice-container wrong-selected" disabled="true">
             {this.props.choice}
@@ -55,7 +64,8 @@ class MultipleChoice extends Component {
 const mapStateToProps = state => ({
   questionAnswered: state.question.questionAnswered,
   answeredCorrectly: state.question.answeredCorrectly,
-  correctAnswer: state.question.question.correct
+  correctAnswer: state.question.question.correct,
+  selectedAnswer: state.question.question.selectedAnswer
 })
 
 export default connect(mapStateToProps)(MultipleChoice);

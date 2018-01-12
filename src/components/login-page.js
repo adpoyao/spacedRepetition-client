@@ -5,6 +5,8 @@ import backgroundImage from '../assets/tokyo-streets-night-photography.jpg';
 
 import LoginForm from './login-form';
 
+import './login-page.css'
+
 export function LoginPage(props) {
     // If we are logged in (which happens automatically when registration
     // is successful) redirect to the user's dashboard
@@ -13,11 +15,12 @@ export function LoginPage(props) {
     }
     return (
         <div 
-            className="home"
+            className="home login-page"
             style={{backgroundImage: `url(${backgroundImage})`}}>
-            <h2 className="login-signup-title">Log In</h2>
-            <LoginForm />
-            {/* <Link to="/">Login</Link> */}
+            <div className="login-container">
+                <h2 className="login-signup-title">Log In</h2>
+                <LoginForm />
+            </div>
         </div>
     );
 }

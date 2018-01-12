@@ -5,10 +5,16 @@
   font-size: 1em
 }
 
-.correct {
+.multi-choice-container:disabled {
+  color: black
+}
+
+.correct:disabled {
   color: rgb(60, 219, 60);
 }
 
-.wrong-selected {
+.wrong-selected:disabled {
   color: rgb(205, 44, 46);
 }
+
+

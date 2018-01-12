@@ -2,9 +2,9 @@ import { TOGGLE_SETTING, TOGGLE_ROMAJI, TOGGLE_HIRAGANA, TOGGLE_KATAKANA } from 
 
 const initialState = {
   showSetting: false,
-  showRomaji: true,
+  showRomaji: false,
   showHiragana: true,
-  showKatakana: true
+  showKatakana: false
 };
 
 export const reducer = (state=initialState, action) => {
