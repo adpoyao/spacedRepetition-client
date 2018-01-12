@@ -1,6 +1,6 @@
 .home {
   display: flex;
-  flex-flow: row-wrap;
+  flex-flow: row wrap;
   justify-content: center;
   align-content: center;
   height: 450px
@@ -9,6 +9,17 @@
 .login-signup-title {
   flex: 1 100%;
   color: white;
-  font-size: 2em;
+  font-size: 4em;
   line-height: 100px
+}
+
+.login-signup-box {
+  margin-top: -1px;
+  width: 300px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.red {
+  background-color: rgba(205, 44, 46, 0.9);
 }
